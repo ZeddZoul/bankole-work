@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import AccentFont from "./AccentFont";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
@@ -15,6 +16,7 @@ const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [heroHeight, setHeroHeight] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     // Set initial window width
@@ -67,7 +69,13 @@ const Navbar = () => {
   // Determine if logo should be visible
   const isLogoVisible = () => {
     if (windowWidth >= 1024) return true; // Always visible on lg and above
-    return scrollY > heroHeight; // On mobile, only visible when past hero section
+
+    // Only apply disappearing behavior on home page
+    if (pathname === "/") {
+      return scrollY > heroHeight; // On mobile home page, only visible when past hero section
+    }
+
+    return true; // Always visible on other pages
   };
   return (
     <>
