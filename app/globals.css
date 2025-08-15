@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Custom accent font */
+@font-face {
+  font-family: "AccentFont";
+  src: url("./fonts/accent.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Minimal reset - only what's needed */
+* {
+  box-sizing: border-box;
+}
