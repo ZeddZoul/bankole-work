@@ -3,6 +3,7 @@
 import AccentFont from "../AccentFont";
 import { HiMail } from "react-icons/hi";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutSection = () => {
   return (
@@ -26,10 +27,11 @@ const AboutSection = () => {
             <div className="bg-gray-100 p-8 rounded-none">
               <div className="bg-white p-6 rounded-none shadow-sm">
                 <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-none">
-                  <img
+                  <Image
                     src="/hero.png"
                     alt="Gbenga Bankole - About"
-                    className="w-full h-full object-cover object-center"
+                    fill
+                    className="object-cover object-center"
                   />
                 </div>
               </div>

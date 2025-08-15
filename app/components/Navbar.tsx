@@ -6,6 +6,7 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -177,33 +178,36 @@ const Navbar = () => {
             >
               {/* Navigation Links */}
               <div className="flex flex-col gap-8 text-center mb-12">
-                <motion.a
-                  href="#home"
-                  className="text-4xl font-semibold text-gray-900 no-underline tracking-wide"
+                <Link href="/" onClick={toggleMobileMenu}>
+                  <motion.span
+                    className="text-4xl font-semibold text-gray-900 no-underline tracking-wide cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Home
+                  </motion.span>
+                </Link>
+                <Link href="/works" onClick={toggleMobileMenu}>
+                  <motion.span
+                    className="text-4xl font-semibold text-gray-900 no-underline tracking-wide cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Works
+                  </motion.span>
+                </Link>
+                <Link
+                  href="mailto:info@bankole.work"
                   onClick={toggleMobileMenu}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
-                  Home
-                </motion.a>
-                <motion.a
-                  href="#works"
-                  className="text-4xl font-semibold text-gray-900 no-underline tracking-wide"
-                  onClick={toggleMobileMenu}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Works
-                </motion.a>
-                <motion.a
-                  href="#contact"
-                  className="text-4xl font-semibold text-gray-900 no-underline tracking-wide"
-                  onClick={toggleMobileMenu}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Contact
-                </motion.a>
+                  <motion.span
+                    className="text-4xl font-semibold text-gray-900 no-underline tracking-wide cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Contact
+                  </motion.span>
+                </Link>
               </div>
 
               {/* Social Links in Mobile Menu */}

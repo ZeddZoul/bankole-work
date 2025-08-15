@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import AccentFont from "../AccentFont";
 import { motion } from "framer-motion";
 import React from "react";
+import Image from "next/image";
 
 interface Testimonial {
   id: number;
@@ -207,11 +208,12 @@ const Testimonials = () => {
 
                     {/* Author */}
                     <div className="flex items-center gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-gray-200 group-hover:ring-2 group-hover:ring-gray-300 transition-all duration-300">
-                        <img
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-gray-200 group-hover:ring-2 group-hover:ring-gray-300 transition-all duration-300 relative">
+                        <Image
                           src={testimonial.avatar}
                           alt={testimonial.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>
                       <div>
