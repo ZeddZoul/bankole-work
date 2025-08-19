@@ -34,9 +34,9 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <span className="text-2xl font-semibold text-gray-900 md:text-3xl lg:text-5xl block tracking-widest relative">
+                {/* <span className="text-2xl font-semibold text-gray-900 md:text-3xl lg:text-5xl block tracking-widest relative">
                   Gbenga
-                </span>
+                </span> */}
 
                 <motion.span
                   className="text-6xl md:text-7xl font-semibold tracking-widest lg:text-8xl text-gray-900 block"
@@ -57,7 +57,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 1.0 }}
           >
             <p className="text-lg md:text-xl font-medium text-text-primary uppercase tracking-[0.1em] leading-relaxed">
-              Worldwide Videographer And Storyteller
+              Worldwide Filmmaker
             </p>
             <p className="text-base md:text-lg leading-relaxed text-text-secondary font-light">
               Specialising In Travel And Lifestyle Videography And He Regularly
@@ -112,7 +112,7 @@ const HeroSection = () => {
                 className="text-xs font-normal tracking-[0.2em] text-text-primary [writing-mode:vertical-rl] [text-orientation:mixed]"
                 style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
               >
-                GBENGA BANKOLE
+                BANKOLE
               </span>
             </motion.div>
           </motion.div>

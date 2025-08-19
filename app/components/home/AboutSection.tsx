@@ -54,7 +54,7 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               <AccentFont className="text-4xl md:text-5xl lg:text-6xl tracking-widest font-semibold text-gray-900 ">
-                <h2>About Gbenga</h2>
+                <h2>About Bankole</h2>
               </AccentFont>
             </motion.div>
 
@@ -67,8 +67,8 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               <p className="text-base md:text-lg leading-relaxed text-text-secondary font-light">
-                Gbenga Is A Professional Lifestyle And Adventure Videographer
-                With A Passion For Creative Storytelling Through His Images.
+                Bankole Is A Professional Filmmaker
+                With A Passion For Creative Storytelling Through His Videos.
                 Born In Nigeria, He&apos;s Spent The Last Five Years Travelling
                 The World In Search Of Some Of The Most Unique Environments To
                 Shoot.

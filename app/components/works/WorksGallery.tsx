@@ -44,7 +44,8 @@ const worksData: WorkItem[] = [
     id: 3,
     title: "Afrobeat Sensation",
     category: "Music Videos",
-    description: "Vibrant music video capturing the energy and rhythm of contemporary Afrobeat culture.",
+    description:
+      "Vibrant music video capturing the energy and rhythm of contemporary Afrobeat culture.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-72",
@@ -53,7 +54,8 @@ const worksData: WorkItem[] = [
     id: 4,
     title: "Stories from Lagos Streets",
     category: "Documentaries",
-    description: "An intimate documentary exploring the daily lives and dreams of Lagos residents.",
+    description:
+      "An intimate documentary exploring the daily lives and dreams of Lagos residents.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-96",
@@ -63,7 +65,8 @@ const worksData: WorkItem[] = [
     id: 5,
     title: "60-Second Brand Story",
     category: "Short Form Content",
-    description: "Dynamic short-form content designed for social media engagement and brand awareness.",
+    description:
+      "Dynamic short-form content designed for social media engagement and brand awareness.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-60",
@@ -72,7 +75,8 @@ const worksData: WorkItem[] = [
     id: 6,
     title: "Sustainable Fashion Collection",
     category: "Clothing Brands",
-    description: "Showcasing eco-conscious fashion through compelling visual narratives.",
+    description:
+      "Showcasing eco-conscious fashion through compelling visual narratives.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-88",
@@ -81,7 +85,8 @@ const worksData: WorkItem[] = [
     id: 7,
     title: "Handcrafted Elegance",
     category: "Jewelry Brands",
-    description: "Luxury jewelry campaign highlighting artisanal craftsmanship and timeless design.",
+    description:
+      "Luxury jewelry campaign highlighting artisanal craftsmanship and timeless design.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-56",
@@ -90,7 +95,8 @@ const worksData: WorkItem[] = [
     id: 8,
     title: "BMW X5 Desert Adventure",
     category: "Car Commercials",
-    description: "Cinematic commercial capturing the BMW X5's performance in challenging desert terrain.",
+    description:
+      "Cinematic commercial capturing the BMW X5's performance in challenging desert terrain.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-84",
@@ -100,7 +106,8 @@ const worksData: WorkItem[] = [
     id: 9,
     title: "Discover Morocco",
     category: "Tour Promo",
-    description: "Travel promotional video showcasing Morocco's rich culture, landscapes, and hidden gems.",
+    description:
+      "Travel promotional video showcasing Morocco's rich culture, landscapes, and hidden gems.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-72",
@@ -109,7 +116,8 @@ const worksData: WorkItem[] = [
     id: 10,
     title: "Urban Beats",
     category: "Music Videos",
-    description: "Contemporary music video blending urban aesthetics with dynamic choreography.",
+    description:
+      "Contemporary music video blending urban aesthetics with dynamic choreography.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-68",
@@ -118,7 +126,8 @@ const worksData: WorkItem[] = [
     id: 11,
     title: "TikTok Campaign Series",
     category: "Short Form Content",
-    description: "Creative short-form content series designed for maximum social media impact.",
+    description:
+      "Creative short-form content series designed for maximum social media impact.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-64",
@@ -127,7 +136,8 @@ const worksData: WorkItem[] = [
     id: 12,
     title: "The Art of Traditional Weaving",
     category: "Documentaries",
-    description: "Documentary exploring traditional textile crafts and the artisans preserving ancient techniques.",
+    description:
+      "Documentary exploring traditional textile crafts and the artisans preserving ancient techniques.",
     thumbnail: "/hero.png",
     videoUrl: "#",
     height: "h-76",
