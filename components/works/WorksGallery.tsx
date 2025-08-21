@@ -212,13 +212,9 @@ const WorksGallery = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <AccentFont className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-wider mb-6">
-            <h1>Selected Works</h1>
+            <h1>My Works</h1>
           </AccentFont>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A curated collection of visual stories that showcase the art of
-            videography and the power of compelling narratives from around the
-            world.
-          </p>
+        
         </motion.div>
 
         {/* Category Filter */}

@@ -283,10 +283,10 @@ export default function Portfolio() {
             viewport={{ once: true }}
           >
             <a
-              href="/works"
+              href="/"
               className="text-white text-base md:text-lg font-medium hover:opacity-70 transition-opacity duration-300 border-b border-white/30 hover:border-white pb-1"
             >
-              See all reels
+              See my works
             </a>
           </motion.div>
         </motion.div>

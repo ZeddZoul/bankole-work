@@ -70,9 +70,9 @@ const Navbar = () => {
   const isLogoVisible = () => {
     if (windowWidth >= 1024) return true; // Always visible on lg and above
 
-    // Only apply disappearing behavior on home page
-    if (pathname === "/") {
-      return scrollY > heroHeight; // On mobile home page, only visible when past hero section
+    // Only apply disappearing behavior on about page
+    if (pathname === "/about") {
+      return scrollY > heroHeight; // On mobile about page, only visible when past hero section
     }
 
     return true; // Always visible on other pages
@@ -192,16 +192,16 @@ const Navbar = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Home
+                    Portfolio
                   </motion.span>
                 </Link>
-                <Link href="/works" onClick={toggleMobileMenu}>
+                <Link href="/about" onClick={toggleMobileMenu}>
                   <motion.span
                     className="text-4xl font-semibold text-gray-900 no-underline tracking-wide cursor-pointer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Works
+                    About
                   </motion.span>
                 </Link>
                 <Link

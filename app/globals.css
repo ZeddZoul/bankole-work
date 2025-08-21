@@ -3,7 +3,7 @@
 /* Custom accent font */
 @font-face {
   font-family: "AccentFont";
-  src: url("./fonts/accent.ttf") format("truetype");
+  src: url("../fonts/accent.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
