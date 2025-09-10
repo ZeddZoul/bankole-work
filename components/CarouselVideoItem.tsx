@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useVideoUrls } from "../lib/hooks/useVideoUrls";
 
 interface Project {
