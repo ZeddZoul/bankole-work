@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useVideoUrls } from "../lib/hooks/useVideoUrls";
 
 interface Project {
@@ -146,7 +147,7 @@ const CarouselVideoItem: React.FC<CarouselVideoItemProps> = ({
               // Only start tracking when hover starts and video actually plays
               startProgressTracking(video, projectId);
             })
-            .catch((error: any) => {
+            .catch((error: unknown) => {
               console.log("Video play failed:", error);
             });
         }
@@ -193,7 +194,6 @@ const CarouselVideoItem: React.FC<CarouselVideoItemProps> = ({
   }
 
   const isYouTube = project.type === "youtube";
-  const youtubeVideoId = isYouTube ? getYouTubeVideoId(project.videoSrc) : null;
   const thumbnailUrl = isYouTube
     ? getYouTubeThumbnail(project.videoSrc)
     : posterUrl;
@@ -237,27 +237,16 @@ const CarouselVideoItem: React.FC<CarouselVideoItemProps> = ({
         {/* Render YouTube iframe or regular video */}
         {isYouTube ? (
           <div className="w-full h-full relative">
-            <img
-              src={thumbnailUrl}
-              alt={project.title}
-              className="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"
+            <iframe
+              src={`https://www.youtube.com/embed/${getYouTubeVideoId(
+                project.videoSrc
+              )}`}
+              title={project.title}
+              className="w-full h-full rounded-lg"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
-            {/* YouTube Play Button Overlay */}
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <motion.div
-                className="w-12 h-12 md:w-16 md:h-16 bg-red-600 rounded-full flex items-center justify-center backdrop-blur-sm"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <svg
-                  className="w-4 h-4 md:w-6 md:h-6 text-white ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </motion.div>
-            </div>
           </div>
         ) : (
           <video
@@ -285,7 +274,7 @@ const CarouselVideoItem: React.FC<CarouselVideoItemProps> = ({
 
         {/* Play Button Overlay for regular videos */}
         {!isYouTube && (
-          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="absolute inset-0 bg-gray-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <motion.div
               className="w-12 h-12 md:w-16 md:h-16 bg-white/90 rounded-full flex items-center justify-center backdrop-blur-sm"
               whileHover={{ scale: 1.1 }}

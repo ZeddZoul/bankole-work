@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
 
 interface PortfolioItem {
@@ -97,7 +98,7 @@ export default function Portfolio() {
 
   return (
     <motion.section
-      className="bg-black py-12 md:py-24 px-6 md:px-12 relative overflow-hidden"
+      className="bg-gray-900 py-12 md:py-24 px-6 md:px-12 relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -196,7 +197,7 @@ export default function Portfolio() {
                   viewport={{ once: true }}
                   whileHover={{ y: -10 }}
                 >
-                  <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden bg-black rounded-lg md:rounded-none">
+                  <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden bg-gray-900 rounded-lg md:rounded-none">
                     {item.type === "youtube" ? (
                       <iframe
                         src={`https://www.youtube.com/embed/${item.src}?autoplay=0&mute=1&controls=1&rel=0`}
@@ -218,12 +219,12 @@ export default function Portfolio() {
                     )}
 
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/20 transition-all duration-300 pointer-events-none" />
 
                     {/* Video Title */}
                     {item.title && (
                       <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <h3 className="text-white text-base md:text-lg font-medium tracking-wide">
+                        <h3 className="text-white text-base md:text-lg font-medium">
                           {item.title}
                         </h3>
                       </div>
@@ -281,12 +282,12 @@ export default function Portfolio() {
             transition={{ duration: 0.6, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <a
+            <Link
               href="/"
               className="text-white text-base md:text-lg font-medium hover:opacity-70 transition-opacity duration-300 border-b border-white/30 hover:border-white pb-1"
             >
               See my works
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

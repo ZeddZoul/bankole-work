@@ -1,13 +1,30 @@
-import { useState, useEffect } from 'react';
-import { getVideoSrc, getPosterSrc } from '@/lib/cloudinary';
+import { useState, useEffect } from "react";
+import { getVideoSrc, getPosterSrc } from "@/lib/cloudinary";
 
 interface VideoUrls {
   videoUrl: string;
   posterUrl?: string;
 }
 
-export const useVideoUrls = (publicId: string, quality: 'high' | 'medium' | 'low' = 'high') => {
-  const [urls, setUrls] = useState<VideoUrls>({ videoUrl: '', posterUrl: undefined });
+// Type declaration for Network Information API
+interface NetworkInformation {
+  effectiveType?: "4g" | "3g" | "2g" | "slow-2g";
+  downlink?: number;
+  rtt?: number;
+}
+
+interface NavigatorWithConnection extends Navigator {
+  connection?: NetworkInformation;
+}
+
+export const useVideoUrls = (
+  publicId: string,
+  quality: "high" | "medium" | "low" = "high"
+) => {
+  const [urls, setUrls] = useState<VideoUrls>({
+    videoUrl: "",
+    posterUrl: undefined,
+  });
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -29,32 +46,32 @@ export const useVideoUrls = (publicId: string, quality: 'high' | 'medium' | 'low
 
 // Hook for adaptive quality selection based on connection/device
 export const useAdaptiveVideoUrl = (publicId: string) => {
-  const [quality, setQuality] = useState<'high' | 'medium' | 'low'>('high');
+  const [quality, setQuality] = useState<"high" | "medium" | "low">("high");
   const { videoUrl, posterUrl, loading } = useVideoUrls(publicId, quality);
 
   useEffect(() => {
     // Simple connection-based quality selection
-    if ('connection' in navigator) {
-      const connection = (navigator as any).connection;
-      if (connection) {
-        if (connection.effectiveType === '4g') {
-          setQuality('high');
-        } else if (connection.effectiveType === '3g') {
-          setQuality('medium');
+    if ("connection" in navigator) {
+      const connection = (navigator as NavigatorWithConnection).connection;
+      if (connection && connection.effectiveType) {
+        if (connection.effectiveType === "4g") {
+          setQuality("high");
+        } else if (connection.effectiveType === "3g") {
+          setQuality("medium");
         } else {
-          setQuality('low');
+          setQuality("low");
         }
       }
     }
-    
+
     // Also consider device pixel ratio and viewport size
     const devicePixelRatio = window.devicePixelRatio || 1;
     const viewportWidth = window.innerWidth;
-    
+
     if (devicePixelRatio < 2 && viewportWidth < 768) {
-      setQuality('low');
+      setQuality("low");
     } else if (viewportWidth < 1024) {
-      setQuality('medium');
+      setQuality("medium");
     }
   }, []);
 
@@ -62,7 +79,9 @@ export const useAdaptiveVideoUrl = (publicId: string) => {
 };
 
 // Batch URL generation for multiple videos
-export const useBatchVideoUrls = (items: Array<{ publicId: string, quality?: 'high' | 'medium' | 'low' }>) => {
+export const useBatchVideoUrls = (
+  items: Array<{ publicId: string; quality?: "high" | "medium" | "low" }>
+) => {
   const [urls, setUrls] = useState<Record<string, VideoUrls>>({});
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -73,9 +92,9 @@ export const useBatchVideoUrls = (items: Array<{ publicId: string, quality?: 'hi
     }
 
     const urlMap: Record<string, VideoUrls> = {};
-    
-    items.forEach(item => {
-      const videoUrl = getVideoSrc(item.publicId, item.quality || 'high');
+
+    items.forEach((item) => {
+      const videoUrl = getVideoSrc(item.publicId, item.quality || "high");
       const posterUrl = getPosterSrc(item.publicId);
       urlMap[item.publicId] = { videoUrl, posterUrl };
     });

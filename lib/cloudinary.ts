@@ -139,7 +139,6 @@ export const generateVideoUrls = (
   publicId: string,
   options: { useCache?: boolean; obfuscate?: boolean } = {}
 ) => {
-  const cloudName = getCloudName();
   const { useCache = true, obfuscate = false } = options;
 
   return {

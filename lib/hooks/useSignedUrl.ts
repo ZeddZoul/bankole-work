@@ -6,6 +6,17 @@ interface VideoUrls {
   posterUrl?: string;
 }
 
+// Type declaration for Network Information API
+interface NetworkInformation {
+  effectiveType?: "4g" | "3g" | "2g" | "slow-2g";
+  downlink?: number;
+  rtt?: number;
+}
+
+interface NavigatorWithConnection extends Navigator {
+  connection?: NetworkInformation;
+}
+
 export const useVideoUrls = (
   publicId: string,
   quality: "high" | "medium" | "low" = "high"
@@ -41,8 +52,8 @@ export const useAdaptiveVideoUrl = (publicId: string) => {
   useEffect(() => {
     // Simple connection-based quality selection
     if ("connection" in navigator) {
-      const connection = (navigator as any).connection;
-      if (connection) {
+      const connection = (navigator as NavigatorWithConnection).connection;
+      if (connection && connection.effectiveType) {
         if (connection.effectiveType === "4g") {
           setQuality("high");
         } else if (connection.effectiveType === "3g") {

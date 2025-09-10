@@ -49,7 +49,7 @@ const ContactSection = () => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -100,7 +100,7 @@ const ContactSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 tracking-wider mb-6">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 uppercase mb-6">
             Get In Touch
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -119,7 +119,7 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="bg-gray-50 p-8 md:p-10 rounded-2xl">
-              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-8">
+              <h2 className="text-xl md:text-2xl font-semibold text-gray-900 uppercase mb-8">
                 Send a Message
               </h2>
 
@@ -248,7 +248,7 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div>
-              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-8">
+              <h2 className="text-xl md:text-2xl font-semibold text-gray-900 uppercase mb-8">
                 Let&apos;s Connect
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">

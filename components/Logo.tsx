@@ -14,7 +14,7 @@ interface LogoProps {
 export default function Logo({ children, className = "" }: LogoProps) {
   return (
     <span
-      className={`${logoFont.className} ${className} pointer-events-none select-none`}
+      className={`font-unboxed-custom uppercase ${className} pointer-events-none select-none`}
     >
       {children}
     </span>

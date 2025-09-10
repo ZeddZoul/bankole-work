@@ -1,12 +1,7 @@
 // Security utilities for client-side portfolio
 // Provides basic obfuscation without requiring a backend
 
-// Simple base64 encoding/decoding for cloud name obfuscation
-const encode = (str: string): string => {
-  if (typeof window === "undefined") return str;
-  return btoa(str);
-};
-
+// Simple base64 decoding for cloud name obfuscation
 const decode = (str: string): string => {
   if (typeof window === "undefined") return str;
   try {
@@ -117,9 +112,9 @@ export const getSessionFingerprint = (): string => {
   const components = [
     navigator.userAgent,
     navigator.language,
-    screen.width,
-    screen.height,
-    new Date().getTimezoneOffset(),
+    screen.width.toString(),
+    screen.height.toString(),
+    new Date().getTimezoneOffset().toString(),
   ];
 
   return btoa(components.join("|")).substring(0, 12);

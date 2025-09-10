@@ -52,7 +52,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl tracking-widest font-bold text-gray-900">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 uppercase">
                 About Bankole
               </h2>
             </motion.div>

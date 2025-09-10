@@ -3,6 +3,7 @@
 import { HiMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Logo from "../Logo";
 const HeroSection = () => {
   return (
     <div className="flex items-center hero-section">
@@ -38,12 +39,12 @@ const HeroSection = () => {
                 </span> */}
 
                 <motion.span
-                  className="text-6xl md:text-7xl font-black tracking-widest lg:text-8xl text-gray-900 block"
+                  className="text-6xl md:text-7xl font-black lg:text-8xl text-gray-900 block"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  Bankole
+                  <Logo>BANKOLE</Logo>
                 </motion.span>
               </motion.h1>
             </div>
@@ -70,7 +71,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
           >
-            <span className="text-xl text-black">
+            <span className="text-xl text-gray-900">
               <HiMail />
             </span>
             <a

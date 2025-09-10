@@ -8,7 +8,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <motion.footer
-      className="bg-black text-white py-16 px-12"
+      className="bg-gray-900 text-white py-16 px-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -54,7 +54,7 @@ const Footer = () => {
                 Home
               </Link>
               <Link
-                href="/works"
+                href="/"
                 className="block text-sm text-gray-300 hover:text-white transition-colors"
               >
                 Works
@@ -171,6 +171,18 @@ const Footer = () => {
             <p className="text-xs text-gray-500">
               2025 Bankole & All Rights Reserved
             </p>
+
+            {/* Attribution */}
+            <div className="flex items-center justify-center gap-2 mt-2">
+              <span className="text-xs text-gray-600 font-light">
+                Carved with intention by
+              </span>
+              <img
+                src="/adelemind.svg"
+                alt="Adelemind"
+                className="h-12 opacity-70 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>

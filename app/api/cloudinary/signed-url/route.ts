@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generateSignedVideoUrl, generatePosterUrl } from "@/lib/cloudinary";
+import { generateVideoUrl, generatePosterUrl } from "@/lib/cloudinary";
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     if (type === "poster") {
       signedUrl = generatePosterUrl(publicId);
     } else {
-      signedUrl = generateSignedVideoUrl(publicId);
+      signedUrl = generateVideoUrl(publicId);
     }
 
     return NextResponse.json({
@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
     if (type === "poster") {
       signedUrl = generatePosterUrl(publicId);
     } else {
-      signedUrl = generateSignedVideoUrl(publicId);
+      signedUrl = generateVideoUrl(publicId);
     }
 
     return NextResponse.json({

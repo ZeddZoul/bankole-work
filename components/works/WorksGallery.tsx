@@ -29,13 +29,23 @@ const WorksGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const [selectedVideo, setSelectedVideo] = useState<Project | null>(null);
-  const [videoProgress, setVideoProgress] = useState<{ [key: string]: number }>(
-    {}
-  );
 
   // Refs for video management
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
   const videoProgressRef = useRef<{ [key: string]: number }>({});
+
+  // Simple state setter for video progress (used by CarouselVideoItem)
+  const setVideoProgress = (
+    progress: React.SetStateAction<{ [key: string]: number }>
+  ) => {
+    // Update the ref directly since this is the source of truth
+    if (typeof progress === "function") {
+      const newProgress = progress(videoProgressRef.current);
+      Object.assign(videoProgressRef.current, newProgress);
+    } else {
+      Object.assign(videoProgressRef.current, progress);
+    }
+  };
 
   const categories = getCategories(allProjects);
 
@@ -109,7 +119,7 @@ const WorksGallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 tracking-wider mb-4">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 uppercase mb-4">
               My Works
             </h1>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">

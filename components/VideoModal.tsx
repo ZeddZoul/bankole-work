@@ -82,7 +82,7 @@ const VideoModal: React.FC<VideoModalProps> = ({
         </button>
 
         {/* Video */}
-        <div className="w-[80%] mx-auto relative bg-black rounded-lg overflow-hidden">
+        <div className="w-[80%] mx-auto relative bg-gray-900 rounded-lg overflow-hidden">
           {isYouTube ? (
             <iframe
               key={selectedVideo.id}
@@ -118,7 +118,7 @@ const VideoModal: React.FC<VideoModalProps> = ({
         </div>
 
         {/* Video Info */}
-        <div className="mt-4 text-center bg-black/50 rounded-lg p-3">
+        <div className="mt-4 text-center bg-gray-900/50 rounded-lg p-3">
           <h3 className="text-xl font-unboxed-custom font-semibold text-white mb-1">
             {selectedVideo.title}
           </h3>
