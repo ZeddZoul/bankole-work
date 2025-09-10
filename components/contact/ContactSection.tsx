@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import AccentFont from "../AccentFont";
 import { motion } from "framer-motion";
 import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
 import {
@@ -101,9 +100,9 @@ const ContactSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <AccentFont className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-wider mb-6">
-            <h1>Get In Touch</h1>
-          </AccentFont>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 tracking-wider mb-6">
+            Get In Touch
+          </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ready to bring your vision to life? Let&apos;s collaborate on your
             next project. Whether it&apos;s a commercial shoot, documentary, or

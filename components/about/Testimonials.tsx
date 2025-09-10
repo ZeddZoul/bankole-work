@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import AccentFont from "../AccentFont";
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
@@ -112,9 +111,9 @@ const Testimonials = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <AccentFont className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 tracking-wider">
-            <h2>What People Are Saying</h2>
-          </AccentFont>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 tracking-wider">
+            Testimonials
+          </h2>
         </motion.div>
 
         {/* Testimonials Carousel */}

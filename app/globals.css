@@ -1,10 +1,67 @@
 @import "tailwindcss";
 
-/* Custom accent font */
+/* Logo font (only for Bankole logo) */
 @font-face {
-  font-family: "AccentFont";
-  src: url("../fonts/accent.ttf") format("truetype");
+  font-family: "LogoFont";
+  src: url("/fonts/logo.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Unboxed Custom Font Family (formerly Pacaembu) */
+@font-face {
+  font-family: "UnboxedCustom";
+  src: url("/fonts/Unboxed-Custom-Thin-Trial.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UnboxedCustom";
+  src: url("/fonts/Unboxed-Custom-Light-Trial.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UnboxedCustom";
+  src: url("/fonts/Unboxed-Custom-Regular-Trial.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UnboxedCustom";
+  src: url("/fonts/Unboxed-Custom-Medium-Trial.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UnboxedCustom";
+  src: url("/fonts/Unboxed-Custom-Bold-Trial.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UnboxedCustom";
+  src: url("/fonts/Unboxed-Custom-Black-Trial.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UnboxedCustom";
+  src: url("/fonts/Unboxed-Custom-Ultra-Trial.woff2") format("woff2");
+  font-weight: 950;
   font-style: normal;
   font-display: swap;
 }
@@ -12,4 +69,9 @@
 /* Minimal reset - only what's needed */
 * {
   box-sizing: border-box;
+}
+
+/* Force UnboxedCustom font to load */
+.font-unboxed-custom {
+  font-family: "UnboxedCustom", system-ui, -apple-system, sans-serif !important;
 }

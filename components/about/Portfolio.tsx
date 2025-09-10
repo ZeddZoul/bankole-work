@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import AccentFont from "../AccentFont";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -113,9 +112,9 @@ export default function Portfolio() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <AccentFont className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white tracking-tight">
-            <h2>My Reels</h2>
-          </AccentFont>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white tracking-tight">
+            My Reels
+          </h2>
         </motion.div>
 
         {/* Portfolio Gallery */}

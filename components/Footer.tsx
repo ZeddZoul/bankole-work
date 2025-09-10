@@ -1,6 +1,5 @@
 "use client";
 
-import AccentFont from "./AccentFont";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { SiBehance, SiDribbble } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -31,9 +30,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <AccentFont className="text-3xl font-semibold text-white">
-              <h3>BANKOLE</h3>
-            </AccentFont>
+            <h3 className="text-3xl font-bold text-white">BANKOLE</h3>
             <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
               Adipiscing proin magna proin mauris donec dignissim congue vel
               maximus.

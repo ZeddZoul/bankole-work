@@ -1,6 +1,5 @@
 "use client";
 
-import AccentFont from "../AccentFont";
 import { HiMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -28,7 +27,7 @@ const HeroSection = () => {
             >
               Hello! I&apos;m
             </motion.div>
-            <AccentFont className="leading-[0.85]  tracking-tight">
+            <div className="leading-[0.85] tracking-tight">
               <motion.h1
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -39,7 +38,7 @@ const HeroSection = () => {
                 </span> */}
 
                 <motion.span
-                  className="text-6xl md:text-7xl font-semibold tracking-widest lg:text-8xl text-gray-900 block"
+                  className="text-6xl md:text-7xl font-black tracking-widest lg:text-8xl text-gray-900 block"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
@@ -47,7 +46,7 @@ const HeroSection = () => {
                   Bankole
                 </motion.span>
               </motion.h1>
-            </AccentFont>
+            </div>
           </motion.div>
 
           <motion.div
