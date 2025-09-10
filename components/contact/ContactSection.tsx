@@ -73,7 +73,7 @@ const ContactSection = () => {
     {
       icon: HiLocationMarker,
       title: "Location",
-      value: "Based in Lagos, Nigeria",
+      value: "Based in the UK",
       link: null,
     },
   ];
