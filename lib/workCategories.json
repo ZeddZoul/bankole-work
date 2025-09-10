@@ -1,0 +1,200 @@
+[
+  {
+    "name": "Documentaries",
+    "slug": "documentaries",
+    "projects": [
+      {
+        "id": 1,
+        "title": "AGRIABLE",
+        "type": "iframe",
+        "url": "https://youtu.be/RSNvOt-vxLI"
+      },
+      {
+        "id": 2,
+        "title": "UN WOMEN",
+        "type": "iframe",
+        "url": "https://youtu.be/CNsJ7oVnYHk"
+      }
+    ]
+  },
+  {
+    "name": "Short Form",
+    "slug": "short-form-content",
+    "projects": [
+      {
+        "id": 6,
+        "title": "TikTok Brand Campaign",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_1mb.mp4"
+      },
+      {
+        "id": 7,
+        "title": "Instagram Reels Series",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+      },
+      {
+        "id": 8,
+        "title": "YouTube Shorts",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_2mb.mp4"
+      },
+      {
+        "id": 9,
+        "title": "Social Media Ads",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/6stlCkUDG_s"
+      },
+      {
+        "id": 10,
+        "title": "Viral Content Creation",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_5mb.mp4"
+      }
+    ]
+  },
+  {
+    "name": "Fashion",
+    "slug": "fashion-brands",
+    "projects": [
+      {
+        "id": 11,
+        "title": "Luxury Fashion Showcase",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/9bZkp7q19f0"
+      },
+      {
+        "id": 12,
+        "title": "Runway Collection",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1920x1080_1mb.mp4"
+      },
+      {
+        "id": 13,
+        "title": "Designer Spotlight",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/YQHsXMglC9A"
+      },
+      {
+        "id": 14,
+        "title": "Street Style Campaign",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1920x1080_2mb.mp4"
+      },
+      {
+        "id": 15,
+        "title": "Sustainable Fashion",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/hFZFjoX2cGg"
+      }
+    ]
+  },
+  {
+    "name": "Auto",
+    "slug": "auto",
+    "projects": [
+      {
+        "id": 16,
+        "title": "Electric Vehicle Launch",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1920x1080_5mb.mp4"
+      },
+      {
+        "id": 17,
+        "title": "Luxury Car Commercial",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/kxloC1MKTpg"
+      },
+      {
+        "id": 18,
+        "title": "Racing Championship",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+      },
+      {
+        "id": 19,
+        "title": "SUV Adventure Series",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/ysz5S6PUM-U"
+      },
+      {
+        "id": 20,
+        "title": "Classic Car Restoration",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
+      }
+    ]
+  },
+  {
+    "name": "Music",
+    "slug": "music-videos",
+    "projects": [
+      {
+        "id": 21,
+        "title": "Chart-Topping Single",
+        "type": "iframe",
+        "url": "https://youtu.be/4oUKS1qJyGg"
+      },
+      {
+        "id": 22,
+        "title": "Electronic Music Visual",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
+      },
+      {
+        "id": 23,
+        "title": "Hip-Hop Artist Feature",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/ZbZSe6N_BXs"
+      },
+      {
+        "id": 24,
+        "title": "Indie Band Session",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1920x1080_1mb.mp4"
+      },
+      {
+        "id": 25,
+        "title": "Pop Star Performance",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/Zi_XLOBDo_Y"
+      }
+    ]
+  },
+  {
+    "name": "Tour Promo",
+    "slug": "tour-promo",
+    "projects": [
+      {
+        "id": 26,
+        "title": "World Tour Announcement",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1920x1080_2mb.mp4"
+      },
+      {
+        "id": 27,
+        "title": "Stadium Concert Film",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/L_jWHffIx5E"
+      },
+      {
+        "id": 28,
+        "title": "Festival Highlights",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1920x1080_5mb.mp4"
+      },
+      {
+        "id": 29,
+        "title": "Behind the Scenes",
+        "type": "iframe",
+        "url": "https://www.youtube.com/embed/pAgnJDJN4VA"
+      },
+      {
+        "id": 30,
+        "title": "Artist Documentary",
+        "type": "video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
+      }
+    ]
+  }
+]

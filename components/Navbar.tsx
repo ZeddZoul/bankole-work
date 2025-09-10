@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import AccentFont from "./AccentFont";
+import Logo from "./Logo";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
@@ -115,9 +115,9 @@ const Navbar = () => {
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          <AccentFont className="text-3xl sm:text-4xl font-semibold text-gray-900 m-0">
-            <h1>Bankole</h1>
-          </AccentFont>
+          <Logo className="text-[calc(theme(fontSize.3xl)-3px)] sm:text-[calc(theme(fontSize.4xl)-3px)] font-semibold text-gray-900 m-0">
+            <h1>BANKOLE</h1>
+          </Logo>
         </motion.div>
 
         {/* Social links - hidden on mobile (580px and below) */}
@@ -171,9 +171,9 @@ const Navbar = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              <AccentFont className="text-5xl font-semibold text-gray-900 m-0">
-                <h1>Bankole</h1>
-              </AccentFont>
+              <Logo className="text-[calc(theme(fontSize.5xl)-3px)] font-semibold text-gray-900 m-0">
+                <h1>BANKOLE</h1>
+              </Logo>
             </motion.div>
 
             {/* Mobile Menu Content */}
@@ -204,10 +204,7 @@ const Navbar = () => {
                     About
                   </motion.span>
                 </Link>
-                <Link
-                  href="mailto:info@bankole.work"
-                  onClick={toggleMobileMenu}
-                >
+                <Link href="/contact" onClick={toggleMobileMenu}>
                   <motion.span
                     className="text-4xl font-semibold text-gray-900 no-underline tracking-wide cursor-pointer"
                     whileHover={{ scale: 1.05 }}

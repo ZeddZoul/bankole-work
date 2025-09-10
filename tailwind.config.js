@@ -16,8 +16,8 @@ module.exports = {
         'border-light': '#e5e5e5',
       },
       fontFamily: {
-        'accent': ['AccentFont', 'serif'],
         'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'unboxed-custom': ['UnboxedCustom', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'hero-sm': ['3rem', { lineHeight: '0.85' }],

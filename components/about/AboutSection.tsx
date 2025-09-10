@@ -1,6 +1,5 @@
 "use client";
 
-import AccentFont from "../AccentFont";
 import { HiMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -53,9 +52,9 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <AccentFont className="text-4xl md:text-5xl lg:text-6xl tracking-widest font-semibold text-gray-900 ">
-                <h2>About Bankole</h2>
-              </AccentFont>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 uppercase">
+                About Bankole
+              </h2>
             </motion.div>
 
             {/* Description */}
@@ -67,11 +66,10 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               <p className="text-base md:text-lg leading-relaxed text-text-secondary font-light">
-                Bankole Is A Professional Filmmaker
-                With A Passion For Creative Storytelling Through His Videos.
-                Born In Nigeria, He&apos;s Spent The Last Five Years Travelling
-                The World In Search Of Some Of The Most Unique Environments To
-                Shoot.
+                Bankole Is A Professional Filmmaker With A Passion For Creative
+                Storytelling Through His Videos. Born In Nigeria, He&apos;s
+                Spent The Last Five Years Travelling The World In Search Of Some
+                Of The Most Unique Environments To Shoot.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed text-text-secondary font-light">

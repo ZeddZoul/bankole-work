@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import { ReactNode } from "react";
 
 const logoFont = localFont({
-  src: "../public/fonts/accent.ttf",
+  src: "../public/fonts/logo.ttf",
   display: "swap",
 });
 
@@ -13,6 +13,10 @@ interface LogoProps {
 
 export default function Logo({ children, className = "" }: LogoProps) {
   return (
-    <span className={`${logoFont.className} ${className}`}>{children}</span>
+    <span
+      className={`font-unboxed-custom uppercase ${className} pointer-events-none select-none`}
+    >
+      {children}
+    </span>
   );
 }

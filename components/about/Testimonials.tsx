@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import AccentFont from "../AccentFont";
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
@@ -112,9 +111,9 @@ const Testimonials = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <AccentFont className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 tracking-wider">
-            <h2>What People Are Saying</h2>
-          </AccentFont>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 uppercase">
+            Testimonials
+          </h2>
         </motion.div>
 
         {/* Testimonials Carousel */}
@@ -128,7 +127,7 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button
             onClick={scrollToPrev}
-            className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-600 hover:text-gray-900 hover:shadow-xl transition-all duration-300 -ml-2 md:ml-0"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-600 hover:text-gray-900 hover:shadow-xl transition-all duration-300"
             aria-label="Previous testimonials"
           >
             <svg
@@ -150,7 +149,7 @@ const Testimonials = () => {
 
           <button
             onClick={scrollToNext}
-            className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-600 hover:text-gray-900 hover:shadow-xl transition-all duration-300 -mr-2 md:mr-0"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-600 hover:text-gray-900 hover:shadow-xl transition-all duration-300"
             aria-label="Next testimonials"
           >
             <svg
@@ -171,25 +170,33 @@ const Testimonials = () => {
           </button>
 
           {/* Testimonials Grid */}
-          <div className="overflow-hidden px-4 md:px-12">
+          <div className="overflow-hidden px-6 md:px-16">
             <div
-              className="flex gap-4 md:gap-6 lg:gap-8 transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-500 ease-in-out"
               style={{
                 transform: `translateX(-${
                   currentIndex * (100 / itemsPerView)
                 }%)`,
+                gap:
+                  itemsPerView === 1
+                    ? "0px"
+                    : itemsPerView === 2
+                    ? "24px"
+                    : "32px",
               }}
             >
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.id}
-                  className={`flex-shrink-0 ${
-                    itemsPerView === 1
-                      ? "w-full"
-                      : itemsPerView === 2
-                      ? "w-1/2"
-                      : "w-1/3"
-                  }`}
+                  className="flex-shrink-0"
+                  style={{
+                    width:
+                      itemsPerView === 1
+                        ? "100%"
+                        : itemsPerView === 2
+                        ? "calc(50% - 12px)"
+                        : "calc(33.333% - 21.333px)",
+                  }}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -197,7 +204,7 @@ const Testimonials = () => {
                 >
                   <div className="bg-white p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col transform hover:-translate-y-2 hover:scale-105 group">
                     {/* Title */}
-                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4 group-hover:text-black transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4 group-hover:text-gray-900 transition-colors duration-300">
                       {testimonial.title}
                     </h3>
 
@@ -217,7 +224,7 @@ const Testimonials = () => {
                         />
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900 text-sm md:text-base group-hover:text-black transition-colors duration-300">
+                        <p className="font-medium text-gray-900 text-sm md:text-base group-hover:text-gray-900 transition-colors duration-300">
                           {testimonial.name}
                         </p>
                       </div>

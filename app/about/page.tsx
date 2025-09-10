@@ -12,7 +12,7 @@ export default function Home() {
       <div className="pt-20">
         <HeroSection />
         <AboutSection />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <Testimonials />
         <Footer />
       </div>

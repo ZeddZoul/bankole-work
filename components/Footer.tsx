@@ -1,6 +1,5 @@
 "use client";
 
-import AccentFont from "./AccentFont";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { SiBehance, SiDribbble } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -9,7 +8,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <motion.footer
-      className="bg-black text-white py-16 px-12"
+      className="bg-gray-900 text-white py-16 px-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -31,9 +30,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <AccentFont className="text-3xl font-semibold text-white">
-              <h3>BANKOLE</h3>
-            </AccentFont>
+            <h3 className="text-3xl font-bold text-white">BANKOLE</h3>
             <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
               Adipiscing proin magna proin mauris donec dignissim congue vel
               maximus.
@@ -57,7 +54,7 @@ const Footer = () => {
                 Home
               </Link>
               <Link
-                href="/works"
+                href="/"
                 className="block text-sm text-gray-300 hover:text-white transition-colors"
               >
                 Works
@@ -174,6 +171,18 @@ const Footer = () => {
             <p className="text-xs text-gray-500">
               2025 Bankole & All Rights Reserved
             </p>
+
+            {/* Attribution */}
+            <div className="flex items-center justify-center gap-2 mt-2">
+              <span className="text-xs text-gray-600 font-light">
+                Carved with intention by
+              </span>
+              <img
+                src="/adelemind.svg"
+                alt="Adelemind"
+                className="h-12 opacity-70 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>
