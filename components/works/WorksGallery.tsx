@@ -29,6 +29,7 @@ const WorksGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const [selectedVideo, setSelectedVideo] = useState<Project | null>(null);
+  const [showAllFilters, setShowAllFilters] = useState(false);
 
   // Refs for video management
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
@@ -48,6 +49,18 @@ const WorksGallery = () => {
   };
 
   const categories = getCategories(allProjects);
+
+  // Priority categories for mobile (first 5 most important)
+  const priorityCategories = [
+    "All",
+    "Fashion",
+    "Commercial",
+    "Creative",
+    "Brand",
+  ];
+  const remainingCategories = categories.filter(
+    (cat) => !priorityCategories.includes(cat)
+  );
 
   // Get items per view based on screen size
   const getItemsPerView = () => {
@@ -129,24 +142,98 @@ const WorksGallery = () => {
 
           {/* Category Filter */}
           <motion.div
-            className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 md:mb-16"
+            className="mb-12 md:mb-16 px-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium rounded-full transition-all duration-300 border ${
-                  selectedCategory === category
-                    ? "bg-gray-900 text-white border-gray-900"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+            {/* Mobile: Priority filters only */}
+            <div className="block md:hidden">
+              <div className="flex flex-wrap justify-center gap-2 mb-3">
+                {priorityCategories
+                  .filter((cat) => categories.includes(cat))
+                  .map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => handleCategoryChange(category)}
+                      className={`px-3 py-2 text-xs font-medium rounded-full transition-all duration-300 border min-w-[70px] ${
+                        selectedCategory === category
+                          ? "bg-gray-900 text-white border-gray-900"
+                          : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+
+                {/* More Filters Button */}
+                {remainingCategories.length > 0 && (
+                  <button
+                    onClick={() => setShowAllFilters(!showAllFilters)}
+                    className="px-3 py-2 text-xs font-medium rounded-full transition-all duration-300 border bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 min-w-[70px] flex items-center justify-center gap-1"
+                  >
+                    <svg
+                      className={`w-3 h-3 transition-transform ${
+                        showAllFilters ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                    More
+                  </button>
+                )}
+              </div>
+
+              {/* Additional filters - collapsible */}
+              {showAllFilters && remainingCategories.length > 0 && (
+                <motion.div
+                  className="flex flex-wrap justify-center gap-2"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {remainingCategories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => handleCategoryChange(category)}
+                      className={`px-3 py-2 text-xs font-medium rounded-full transition-all duration-300 border min-w-[70px] ${
+                        selectedCategory === category
+                          ? "bg-gray-900 text-white border-gray-900"
+                          : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </div>
+
+            {/* Desktop: All filters */}
+            <div className="hidden md:flex flex-wrap justify-center gap-3 md:gap-4">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium rounded-full transition-all duration-300 border ${
+                    selectedCategory === category
+                      ? "bg-gray-900 text-white border-gray-900"
+                      : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </motion.div>
 
           {/* Video Gallery Grid */}

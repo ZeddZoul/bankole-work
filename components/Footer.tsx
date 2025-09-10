@@ -173,7 +173,7 @@ const Footer = () => {
             </p>
 
             {/* Attribution */}
-            <div className="flex items-center justify-center gap-2 mt-2">
+            <div className="flex flex-col md:row items-center justify-center gap-2 mt-2">
               <span className="text-xs text-gray-600 font-light">
                 Carved with intention by
               </span>
